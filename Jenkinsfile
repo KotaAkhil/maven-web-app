@@ -4,11 +4,11 @@ node{
         git branch: 'main', credentialsId: 'Git-Credentials', url: 'https://github.com/KotaAkhil/maven-web-app.git'
     }
     
-    stage('Maven Build'){
+    /*stage('Maven Build'){
         def mavenHome = tool name: "Maven-3.8.7", type: "maven"
         def mavenCMD = "${mavenHome}/bin/mvn"
         sh "${mavenCMD} clean package"
-    }
+    } */
     
     stage('SonarQube analysis') {       
         withSonarQubeEnv('Sonar-Server-7.8') {
